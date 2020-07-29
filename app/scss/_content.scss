@@ -1,0 +1,19 @@
+.content {
+    display: flex;
+    background-color: $red;
+
+    @include breakpoint-down (medium) {
+        background-image: url("../../images/bg-intro-mobile.png");
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        //max-width: toRem(530px); // arbitrary value
+        min-width: toRem(375px);
+    }
+
+    @include breakpoint-up (large) {
+        background-image: url("../../images/bg-intro-desktop.png");
+        flex-direction: row;
+        
+    }
+}
