@@ -1,2 +1,6 @@
 .git
 .vscode
+index_valid_text.html
+dist/styles/debug_style.css
+index_debug_1.html
+dist/styles/index_debug_1.css

@@ -8,17 +8,49 @@ html {
 }
 
 body {
+    position: relative;
     background-color: white;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     font-family: "Poppins", sans-serif;
     font-size: $font-sm;
     line-height: 1.5;
     font-weight: 400;
+    @include breakpoint-up(medium) {
+        overflow-y: hidden;
+    }
+
+    @include breakpoint-up(xxlarge) {
+    }
+    
 }
 
 a, a:hover, a:active {
     text-decoration: none;
+}
+
+.canvas {
+    display: flex;
+    @include breakpoint-up(xxlarge){
+        position: relative;
+        //min-height: 100vh;
+    }
+
+    // .semicircle {
+    //     @include breakpoint-up(xxlarge){
+    //         position: absolute;
+    //         width: 200px;
+    //         height: 200px;
+    //         top: 10px;
+    //         left: 10px;
+    //         border: 10px solid $blue;
+    //         border-radius: 50%;
+    //         border-bottom-color: transparent;
+    //         border-left-color: transparent;
+    //         transform: rotate(-45deg);
+    //     }
+    // }
 }
 
 .container {
@@ -29,9 +61,107 @@ a, a:hover, a:active {
 .btn {
     cursor: pointer;    
     color: $white;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+
+    &:hover {
+        opacity: 0.75;   
+    }
+
+    &:active {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    }
 }
 
-.footer {
-    width: 100%;
-    height: 5vh;
+.error-msg {
+    color: red;
+    font-size: toRem(8px);
+}
+
+div.circles {
+    @include breakpoint-up(xxlarge) {
+        position: absolute;
+        left: 5vh;
+        top: 40vh;
+        display: grid;
+        grid-template-columns: repeat(3, toRem(20px));
+        grid-auto-rows: toRem(20px);
+        gap: toRem(5px);
+    }
+
+    @include breakpoint-down(xlarge){
+        display: none;
+    }
+
+    .circle {
+        @include breakpoint-up(xxlarge) {
+            background-color: $blue;
+            width: toRem(20px);
+            height: toRem(20px);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        @include breakpoint-down(xlarge){
+            display: none;
+        }
+    }
+}
+
+div.parallel-lines {
+    @include breakpoint-up(xxlarge) {
+        position: absolute;
+        left: 70vw;
+        top: -2vh;
+        width: toRem(200px);
+        height: toRem(40px);
+        border: toRem(7px) solid $blue;
+        border-right: transparent;;
+        transform-origin: top left;
+        transform: rotate(110deg);
+        opacity: 0.20;
+        z-index: -1;
+    }
+
+    @include breakpoint-down(xlarge){
+        display: none;
+    }
+}
+
+div.squiggly-lines {
+
+    @include breakpoint-up(xxlarge) {
+        position: absolute;
+        right: 10vw;
+        bottom: 3vh;
+        display: grid;
+        grid-template-columns: repeat(6, toRem(28px));
+        grid-auto-rows: toRem(28px);
+        justify-items: center;
+        align-items: center;
+        // background-color: teal;
+    }
+
+
+    @include breakpoint-down(xlarge){
+        display: none;
+    }
+
+    .upward-angel-bracket {
+
+        @include breakpoint-up(xxlarge) {
+            width: toRem(20px);
+            height: toRem(20px);
+            border: toRem(3px) solid $red;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            transform-origin: center;
+            transform: rotate(45deg);            
+            opacity: 0.6;
+        }
+
+        @include breakpoint-down(xlarge){
+            display: none;
+        }
+    }
 }

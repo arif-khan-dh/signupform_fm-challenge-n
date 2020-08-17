@@ -10,11 +10,21 @@
         text-align: center;
     }
 
+    @include breakpoint-up(medium){
+        // max-width: toRem(494px);
+    }
+
 
     &__title {
         font-weight: 700;
         font-size: $font-xxlg;
         line-height: 1.3;
+
+
+        @include breakpoint-up(large){
+            font-size: $font-xxxlg;;
+        }
+
     }
 
     &__subtitle {

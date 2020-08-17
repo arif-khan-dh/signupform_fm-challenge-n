@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="canvas">
-        <div class="content">
+        <div class="content container">
             <div class="text">
                 <div class="text__title">
                     Learn to code by watching others
@@ -24,19 +24,29 @@
                 <div class="cta__form-container">
                     <form class="cta__form">
                         <div class="cta__form__input">
-                            <input type="text" placeholder="First Name">
+                            <input id="txtFirstName" type="text" placeholder="First Name" >
+                            <div id="err-first-name" class="error-msg">First Name cannot be empty</div>
+                            <img src="images/icon-error.svg">
                         </div>
                         <div class="cta__form__input">
-                            <input type="text" placeholder="Last Name">
+                            <input id="txtLastName" type="text" placeholder="Last Name" >
+                            <div id="err-last-name" class="error-msg">Last Name cannot be empty</div>
+                            <img src="images/icon-error.svg">
                         </div>
                         <div class="cta__form__input">
-                            <input type="email" placeholder="Email Address">
+                            <input id="txtEmail" type="text" placeholder="Email Address">
+                            <div id="err-email" class="error-msg">Looks like this is not an email</div>
+                            <img src="images/icon-error.svg">
                         </div>
                         <div class="cta__form__input">
-                            <input type="password" placeholder="Password">
+                            <input id="txtPassword" type="password" placeholder="Password" >
+                            <div id="err-password" class="error-msg">Password cannot be empty</div>
+                            <img src="images/icon-error.svg">
                         </div>
+                        <!-- <input class="cta__form__input" type="password" placeholder="Password" required> -->
                         <div class="cta__form__input">
-                            <a href="#" class="cta__form__btn btn">
+                            <!-- <button type="submit" class="cta__form__btn btn">Claim your free trial</button> -->
+                            <a id="btnClaim" href="#" class="cta__form__btn btn">
                                 Claim your free trial 
                             </a>                            
                         </div>
@@ -46,7 +56,38 @@
                     </form>
                 </div>
             </div>            
-        </div>
+        </div>        
     </div>
+    <div class="circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="parallel-lines"></div>
+    <div class="squiggly-lines">
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+            <div class="upward-angel-bracket"></div>
+    </div>
+
+    <script src="app/js/validation.js"></script>
 </body>
 </html>

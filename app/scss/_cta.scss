@@ -10,6 +10,10 @@
         text-align: center;
     }
 
+    @include breakpoint-up (large) {
+        padding-left: toRem(30px);
+        max-width: toRem(520px);
+    }
 
     &__subscription {
         flex: 0;
@@ -17,7 +21,7 @@
         padding: toRem(20px) toRem(80px);
         text-align: center;
         border-radius: toRem(12px);
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
 
         @include breakpoint-down (small) {
             padding-left: toRem(40px);
@@ -42,38 +46,89 @@
 
     &__form {
 
-        input {
-            border: none;
-            font-weight: 600;
-            font-size: $font-sm;
-            width: 100%;
-        }
+        // input {
+        //     border: none;
+        //     font-weight: 600;
+        //     font-size: $font-sm;
+        //     width: 100%;
+            
+        //     &:required:focus {
+        //         //border: none;
+        //         outline: none;
+        //     }
+        // }
 
         &__input {
+            position: relative;
             width: 100%;
-            padding: toRem(12px);
-            border: 1px solid $grayishBlue;
-            border-radius: toRem(5px);
 
             &:not(:last-child){
                 margin-bottom: toRem(16px);
             }
 
             &:nth-last-child(2) {
-                background-color: $green;
+                // a (hyperlink button)
+            }
+
+            input, a {
+                width: 100%;
+                height: 100%;
+                padding: toRem(16px);
+                border: 1px solid $grayishBlue;
+                border-radius: toRem(5px);
             }
 
             a {
                 display: inline-block;
-                width: 100%;
+                background-color: $green;
+                text-align: center;
                 text-transform: uppercase;
             }
+
+            input {
+
+                &:focus {
+                    box-shadow: 0 0 2px 0px $darkBlue;
+                }
+                
+                & ~ div.error-msg {
+                    margin-top: toRem(5px);
+                    color: $red;
+                    font-size: $font-xxsm;
+                    font-style: italic;
+                    text-align: right;
+                    display: none;
+                }
+
+                & ~ div.visible {
+                    display: block;
+                }
+
+                & ~ img {
+                    position: absolute;
+                    top: toRem(10px);
+                    right: toRem(10px);
+                    opacity: 0;
+                    transition:  opacity 200ms ease-in-out;
+
+                    &.visible {
+                        opacity: 1;
+                    }
+                }
+
+
+                &.invalid {
+                    @include invalid-input;
+                }
+            }
+
         }
 
 
         &__disclaimer {
             font-size: $font-xxsm;
             color: rgba(0, 0, 0, 0.35);
+            text-align: center;
 
             a {
                 color: $red;

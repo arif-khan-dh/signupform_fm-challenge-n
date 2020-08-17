@@ -2,8 +2,8 @@
     @return $pxVal / 16px * 1rem; 
 }
 
-$breakpoint-up: ("medium": "40em", "large": "64em", "xlarge": "90em");
-$breakpoint-down: ("small": "39em", "medium": "63em", "large": "90em");
+$breakpoint-up: ("medium": "40em", "large": "64em", "xlarge": "90em", "xxlarge": "100em");
+$breakpoint-down: ("small": "39em", "medium": "63.9em", "large": "89.9em", "xlarge": "99em");
 
 @mixin breakpoint-down ($size) {
     @media (max-width: map-get($breakpoint-down, $size)){
@@ -15,4 +15,12 @@ $breakpoint-down: ("small": "39em", "medium": "63em", "large": "90em");
     @media (min-width: map-get($breakpoint-up, $size )){
         @content;
     }
+}
+
+@mixin invalid-input {
+    box-shadow: 0 0 1px 1px $red;
+}
+
+@mixin valid-input {
+    box-shadow: 0 0 0px 0px $red;
 }

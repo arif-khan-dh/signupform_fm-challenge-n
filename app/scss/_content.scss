@@ -7,6 +7,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        width: 100vw;
         //max-width: toRem(530px); // arbitrary value
         min-width: toRem(375px);
     }
@@ -14,6 +15,14 @@
     @include breakpoint-up (large) {
         background-image: url("../../images/bg-intro-desktop.png");
         flex-direction: row;
-        
+        justify-content: space-between;
+        align-items: center;
+        max-width: toRem(1440px);
+        padding:  toRem(168px);
+        padding-top: toRem(100px);
+    }
+
+    @include breakpoint-up(xxlarge){
+        margin-top: 10vh;
     }
 }
